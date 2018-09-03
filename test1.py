@@ -2,7 +2,7 @@ from eink import EInk
 from datetime import datetime
 eink = EInk()
 
-mydatetime = datetime.now().replace(hour =12, minute =0)
+mydatetime = datetime.now().replace(hour =9, minute =0)
 eink.send_localtime(mydatetime)
 
 
@@ -28,6 +28,11 @@ eink.send_todo(7, "new task api needs to display er...")
 eink.send_todo(8, "check with anthony - audits used...")
 eink.send_todo(9, "verify modal pops up everywhere")
 eink.send_todo(10, "add md5 click action back into a...")
-eink.send_weather(0, "2:00 AM", "Showers", mydatetime)
+eink.send_weather(0, "Showers", mydatetime)
+eink.send_weather(1, "Showers", mydatetime)
+eink.send_weather(2, "Showers", mydatetime)
+eink.send_weather(3, "Showers", mydatetime)
+eink.send_weather(4, "Showers", mydatetime)
+eink.send_weather(5, "Showers", mydatetime)
 
 eink.send_flush()

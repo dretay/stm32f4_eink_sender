@@ -7,6 +7,7 @@ setup(
 		"rmate", 
  		"protobuf",
 		"pigpio",
-		"pprint"
+		"pprint",
+ 		"pytz"
 	],
 )
