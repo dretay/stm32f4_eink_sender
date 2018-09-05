@@ -116,7 +116,7 @@ class EInk(object):
         return int((start_time - midnight).seconds / 60)
 
 
-    def send_weather(self, idx, description, start_time=datetime.datetime.now()):
+    def send_weather(self, idx, temperature, description, start_time=datetime.datetime.now()):
         # todo: need to map am/pm to day or night values
         weather_lookup = {
             "Mostly Sunny": union_pb2.Weather.MOON,
@@ -147,8 +147,9 @@ class EInk(object):
 
 
         union_message.weather.start = int(start_time.timestamp())
-        union_message.weather.human_start = start_time.strftime("%I %p")
+        union_message.weather.human_start = start_time.strftime("%-I %p")
         union_message.weather.type = weather_lookup.get(description)
         union_message.weather.idx = idx
-        print(f"{union_message.weather.idx}, {union_message.weather.human_start}, {union_message.weather.start}, {union_message.weather.type}")
+        union_message.weather.temperature = temperature
+        print(f"{union_message.weather.idx}, {union_message.weather.temperature}, {union_message.weather.human_start}, {union_message.weather.start}, {union_message.weather.type}")
         self.send_message(union_message)

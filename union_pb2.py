@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='union.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x0bunion.proto\"\xa7\x02\n\x07Weather\x12\"\n\x04type\x18\x01 \x02(\x0e\x32\x14.Weather.WeatherType\x12\r\n\x05start\x18\x02 \x02(\r\x12\x13\n\x0bhuman_start\x18\x03 \x02(\t\x12\x0b\n\x03idx\x18\x04 \x02(\r\"\xc6\x01\n\x0bWeatherType\x12\x11\n\rCHANCEOFSTORM\x10\x00\x12\n\n\x06\x43LOUDS\x10\x01\x12\n\n\x06\x46OGDAY\x10\x02\x12\x0c\n\x08\x46OGNIGHT\x10\x03\x12\x0e\n\nLITTLERAIN\x10\x04\x12\x0e\n\nLITTLESNOW\x10\x05\x12\x08\n\x04MOON\x10\x06\x12\x13\n\x0fPARTLYCLOUDYDAY\x10\x07\x12\x15\n\x11PARTLYCLOUDYNIGHT\x10\x08\x12\x08\n\x04RAIN\x10\t\x12\t\n\x05SLEET\x10\n\x12\x08\n\x04SNOW\x10\x0b\x12\t\n\x05STORM\x10\x0c\"j\n\x07Meeting\x12\r\n\x05start\x18\x01 \x02(\r\x12\x13\n\x0bhuman_start\x18\x02 \x02(\t\x12\x11\n\thuman_end\x18\x03 \x02(\t\x12\r\n\x05title\x18\x04 \x02(\t\x12\x0c\n\x04room\x18\x05 \x02(\t\x12\x0b\n\x03idx\x18\x06 \x02(\r\"2\n\x04Todo\x12\r\n\x05title\x18\x01 \x02(\t\x12\x0e\n\x06status\x18\x02 \x01(\x08\x12\x0b\n\x03idx\x18\x03 \x02(\r\"\x87\x01\n\x0eRetrivalStatus\x12*\n\x06status\x18\x01 \x02(\x0e\x32\x1a.RetrivalStatus.StatusType\x12\x0f\n\x07message\x18\x02 \x01(\t\"8\n\nStatusType\x12\t\n\x05START\x10\x00\x12\n\n\x06UPDATE\x10\x01\x12\t\n\x05\x46LUSH\x10\x02\x12\x08\n\x04\x46\x41IL\x10\x03\"\x7f\n\x04Time\x12\x0c\n\x04year\x18\x01 \x02(\r\x12\r\n\x05month\x18\x02 \x02(\r\x12\x0c\n\x04\x64\x61te\x18\x03 \x02(\r\x12\x0f\n\x07weekday\x18\x04 \x02(\r\x12\r\n\x05hours\x18\x05 \x02(\r\x12\x0f\n\x07minutes\x18\x06 \x02(\r\x12\x0f\n\x07seconds\x18\x07 \x02(\r\x12\n\n\x02\x61m\x18\x08 \x02(\x08\"\x18\n\x06Header\x12\x0e\n\x06length\x18\x01 \x02(\r\"\xa7\x01\n\x0cUnionMessage\x12\x1e\n\x05state\x18\x01 \x01(\x0b\x32\x0f.RetrivalStatus\x12\x19\n\x07meeting\x18\x02 \x01(\x0b\x32\x08.Meeting\x12\x13\n\x04todo\x18\x03 \x01(\x0b\x32\x05.Todo\x12\x19\n\x07weather\x18\x04 \x01(\x0b\x32\x08.Weather\x12\x13\n\x04time\x18\x05 \x01(\x0b\x32\x05.Time\x12\x17\n\x06header\x18\x06 \x01(\x0b\x32\x07.Header')
+  serialized_pb=_b('\n\x0bunion.proto\"\xbc\x02\n\x07Weather\x12\"\n\x04type\x18\x01 \x02(\x0e\x32\x14.Weather.WeatherType\x12\r\n\x05start\x18\x02 \x02(\r\x12\x13\n\x0bhuman_start\x18\x03 \x02(\t\x12\x0b\n\x03idx\x18\x04 \x02(\r\x12\x13\n\x0btemperature\x18\x05 \x02(\x05\"\xc6\x01\n\x0bWeatherType\x12\x11\n\rCHANCEOFSTORM\x10\x00\x12\n\n\x06\x43LOUDS\x10\x01\x12\n\n\x06\x46OGDAY\x10\x02\x12\x0c\n\x08\x46OGNIGHT\x10\x03\x12\x0e\n\nLITTLERAIN\x10\x04\x12\x0e\n\nLITTLESNOW\x10\x05\x12\x08\n\x04MOON\x10\x06\x12\x13\n\x0fPARTLYCLOUDYDAY\x10\x07\x12\x15\n\x11PARTLYCLOUDYNIGHT\x10\x08\x12\x08\n\x04RAIN\x10\t\x12\t\n\x05SLEET\x10\n\x12\x08\n\x04SNOW\x10\x0b\x12\t\n\x05STORM\x10\x0c\"j\n\x07Meeting\x12\r\n\x05start\x18\x01 \x02(\r\x12\x13\n\x0bhuman_start\x18\x02 \x02(\t\x12\x11\n\thuman_end\x18\x03 \x02(\t\x12\r\n\x05title\x18\x04 \x02(\t\x12\x0c\n\x04room\x18\x05 \x02(\t\x12\x0b\n\x03idx\x18\x06 \x02(\r\"2\n\x04Todo\x12\r\n\x05title\x18\x01 \x02(\t\x12\x0e\n\x06status\x18\x02 \x01(\x08\x12\x0b\n\x03idx\x18\x03 \x02(\r\"\x87\x01\n\x0eRetrivalStatus\x12*\n\x06status\x18\x01 \x02(\x0e\x32\x1a.RetrivalStatus.StatusType\x12\x0f\n\x07message\x18\x02 \x01(\t\"8\n\nStatusType\x12\t\n\x05START\x10\x00\x12\n\n\x06UPDATE\x10\x01\x12\t\n\x05\x46LUSH\x10\x02\x12\x08\n\x04\x46\x41IL\x10\x03\"\x7f\n\x04Time\x12\x0c\n\x04year\x18\x01 \x02(\r\x12\r\n\x05month\x18\x02 \x02(\r\x12\x0c\n\x04\x64\x61te\x18\x03 \x02(\r\x12\x0f\n\x07weekday\x18\x04 \x02(\r\x12\r\n\x05hours\x18\x05 \x02(\r\x12\x0f\n\x07minutes\x18\x06 \x02(\r\x12\x0f\n\x07seconds\x18\x07 \x02(\r\x12\n\n\x02\x61m\x18\x08 \x02(\x08\"\x18\n\x06Header\x12\x0e\n\x06length\x18\x01 \x02(\r\"\xa7\x01\n\x0cUnionMessage\x12\x1e\n\x05state\x18\x01 \x01(\x0b\x32\x0f.RetrivalStatus\x12\x19\n\x07meeting\x18\x02 \x01(\x0b\x32\x08.Meeting\x12\x13\n\x04todo\x18\x03 \x01(\x0b\x32\x05.Todo\x12\x19\n\x07weather\x18\x04 \x01(\x0b\x32\x08.Weather\x12\x13\n\x04time\x18\x05 \x01(\x0b\x32\x05.Time\x12\x17\n\x06header\x18\x06 \x01(\x0b\x32\x07.Header')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -86,8 +86,8 @@ _WEATHER_WEATHERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=113,
-  serialized_end=311,
+  serialized_start=134,
+  serialized_end=332,
 )
 _sym_db.RegisterEnumDescriptor(_WEATHER_WEATHERTYPE)
 
@@ -116,8 +116,8 @@ _RETRIVALSTATUS_STATUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=553,
-  serialized_end=609,
+  serialized_start=574,
+  serialized_end=630,
 )
 _sym_db.RegisterEnumDescriptor(_RETRIVALSTATUS_STATUSTYPE)
 
@@ -157,6 +157,13 @@ _WEATHER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='temperature', full_name='Weather.temperature', index=4,
+      number=5, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -171,7 +178,7 @@ _WEATHER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=16,
-  serialized_end=311,
+  serialized_end=332,
 )
 
 
@@ -236,8 +243,8 @@ _MEETING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=313,
-  serialized_end=419,
+  serialized_start=334,
+  serialized_end=440,
 )
 
 
@@ -281,8 +288,8 @@ _TODO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=421,
-  serialized_end=471,
+  serialized_start=442,
+  serialized_end=492,
 )
 
 
@@ -320,8 +327,8 @@ _RETRIVALSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=474,
-  serialized_end=609,
+  serialized_start=495,
+  serialized_end=630,
 )
 
 
@@ -400,8 +407,8 @@ _TIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=611,
-  serialized_end=738,
+  serialized_start=632,
+  serialized_end=759,
 )
 
 
@@ -431,8 +438,8 @@ _HEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=740,
-  serialized_end=764,
+  serialized_start=761,
+  serialized_end=785,
 )
 
 
@@ -497,8 +504,8 @@ _UNIONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=767,
-  serialized_end=934,
+  serialized_start=788,
+  serialized_end=955,
 )
 
 _WEATHER.fields_by_name['type'].enum_type = _WEATHER_WEATHERTYPE

@@ -16,10 +16,11 @@ message Weather{
 		SNOW = 11;
 		STORM = 12;
 	}
-	required WeatherType type = 1;  
+	required WeatherType type = 1;
 	required uint32 start = 2;
 	required string human_start =3;
 	required uint32 idx= 4;
+	required int32 temperature = 5;
 }
 
 message Meeting{
@@ -32,7 +33,7 @@ message Meeting{
 }
 message Todo{
 	required string title = 1;
-	optional bool status = 2; 
+	optional bool status = 2;
 	required uint32 idx= 3;
 
 }
@@ -40,13 +41,13 @@ message RetrivalStatus{
 	enum StatusType {
 		START = 0;
 		UPDATE = 1;
-		FLUSH = 2;	
-		FAIL= 3;	
+		FLUSH = 2;
+		FAIL= 3;
 	}
-	required StatusType status = 1; 
+	required StatusType status = 1;
 	optional string message = 2;
 }
-message Time{	
+message Time{
 	required uint32 year = 1;
 	required uint32 month = 2;
 	required uint32 date = 3;
@@ -60,10 +61,10 @@ message Time{
 message Header{
 	required uint32 length =1;
 }
-message UnionMessage{	
+message UnionMessage{
 	optional RetrivalStatus state = 1;
 	optional Meeting meeting = 2;
-	optional Todo todo = 3;	
+	optional Todo todo = 3;
 	optional Weather weather = 4;
 	optional Time time = 5;
 	optional Header header= 6;
