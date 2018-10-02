@@ -28,7 +28,9 @@ class EInk(object):
     def send_message(self, union_message):
         serialized_msg = union_message.SerializeToString()
         self.send_message_header(serialized_msg)
+        # sleep(1)
         self.pi.i2c_write_device(self.h, serialized_msg)
+        # sleep(1)
 
     def parse_meeting_start(self, meeting_string):
         re_string = '(\d+)\:(\d+)\s(\w+).*'
@@ -53,9 +55,9 @@ class EInk(object):
             union_message.meeting.start = self.parse_meeting_start(m.group(1))
             union_message.meeting.human_start = m.group(1)
             union_message.meeting.human_end = m.group(2)
-            union_message.meeting.title = m.group(3)
+            union_message.meeting.title = m.group(3)[:63]
             if len(m.groups()) == 4:
-                union_message.meeting.room = m.group(4)
+                union_message.meeting.room = m.group(4)[:63] or "N/A"
             union_message.meeting.idx = idx
             print(f"{idx}, {union_message.meeting.start}, {union_message.meeting.human_start}, {union_message.meeting.human_end}, {union_message.meeting.title}, {union_message.meeting.room}")
             self.send_message(union_message)
@@ -69,6 +71,17 @@ class EInk(object):
         print(f"{union_message.todo.idx}, {union_message.todo.title}")
         self.send_message(union_message)
 
+    def send_update(self, msg):
+        union_message = union_pb2.UnionMessage()
+        union_message.state.status = union_pb2.RetrivalStatus.UPDATE
+        union_message.state.message = msg
+        self.send_message(union_message)
+
+    def send_error(self, msg):
+        union_message = union_pb2.UnionMessage()
+        union_message.state.status = union_pb2.RetrivalStatus.FAIL
+        union_message.state.message = msg
+        self.send_message(union_message)
 
     def send_flush(self):
         union_message = union_pb2.UnionMessage()
@@ -119,7 +132,7 @@ class EInk(object):
     def send_weather(self, idx, temperature, description, start_time=datetime.datetime.now()):
         # todo: need to map am/pm to day or night values
         weather_lookup = {
-            "Mostly Sunny": union_pb2.Weather.MOON,
+            "Mostly Sunny": union_pb2.Weather.PARTLYCLOUDYDAY,
             "Sunny": union_pb2.Weather.MOON,  # this needs to be a sun
 
             "Mostly Clear": union_pb2.Weather.MOON,
@@ -142,7 +155,6 @@ class EInk(object):
         union_message = union_pb2.UnionMessage()
 
         start_time = start_time.replace(minute=0, second=0, microsecond=0)
-        # start_time -= datetime.timedelta(hours=4)
         start_time += datetime.timedelta(hours=idx)
 
 

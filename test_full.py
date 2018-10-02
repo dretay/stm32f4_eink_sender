@@ -2,11 +2,9 @@ from eink import EInk
 from datetime import datetime
 eink = EInk()
 
-mydatetime = datetime.now().replace(hour =9, minute =0)
+mydatetime = datetime.now().replace(hour =1, minute =30)
 eink.send_localtime(mydatetime)
 
-
-eink.send_start()
 eink.send_meeting(0,"9:15 AM - 9:45 AM , backlog scrub; Conf Rm - Reston, VA, 8th Floor - Nexen (8)")
 eink.send_meeting(1,"10:45 AM - 11:15 AM , ESPIR Unified Standup Vol. 2; Same room ENDPOINT / UAC uses")
 eink.send_meeting(2,"10:45 AM - 11:00 AM , Endpoint Standup; Conf Rm - Reston, VA, 8th Floor - New York Times (8)")
