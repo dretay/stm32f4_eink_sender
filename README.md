@@ -1,4 +1,4 @@
-## A Python script to screen-scrape Office 365 and submit the data in binary format to a microcontroller##
+## A Python script to screen-scrape Office 365 and submit the data in binary format to a microcontroller ##
 
 ### Overview ###
 
